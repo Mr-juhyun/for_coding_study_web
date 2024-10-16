@@ -6,13 +6,22 @@
     <title>코드 스터디</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/code_list.css' %}">
 </head>
 <body>
-    <h1>코드 스터디</h1>
-    
-    <a href="{% url 'code_submit' %}">코드 제출!</a>
-    
+
+    <header>
+        <h1>코드 스터디</h1>
+        <nav>
+            <ul>
+                {% comment %} <li><a href="{% url 'home' %}">홈</a></li> {% endcomment %}
+                <li><a href="{% url 'code_list' %}">코드 목록</a></li>
+                <li><a href="{% url 'code_submit' %}">코드 제출</a></li>
+                {% comment %} <li><a href="{% url 'login' %}">로그인</a></li> {% endcomment %}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
     <ul>
         {% for code in codes %}
         <li>
@@ -24,6 +33,7 @@
         </li>
         {% endfor %}
     </ul>
+    </main>
 </body>
 </html>
 
