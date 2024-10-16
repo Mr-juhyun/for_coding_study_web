@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 스터디</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/code_list.css' %}">
+</head>
+<body>
+    <h1>코드 스터디</h1>
+    
+    <a href="{% url 'code_submit' %}">코드 제출!</a>
+    
+    <ul>
+        {% for code in codes %}
+        <li>
+            <a href="{% url 'code_detail' code.id %}" >{{ code.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

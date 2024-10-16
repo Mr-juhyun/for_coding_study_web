@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Drawing</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/code_draw.css' %}">
+</head>
+<body>
+    <h1>코드 제출자 :  {{ code.name }}</h1>
+    <pre>{{ code.code }}</pre>
+    
+    <canvas id="drawingCanvas" width="800" height="400"></canvas>
+    
+    <div id="controls">
+        <button id="clearCanvas">지우기</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        let drawing = false;
+
+        canvas.addEventListener('mousedown', () => { drawing = true; });
+        canvas.addEventListener('mouseup', () => { drawing = false; ctx.beginPath(); });
+        canvas.addEventListener('mousemove', draw);
+
+        function draw(e) {
+            if (!drawing) return;
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = 'black';
+            ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        }
+
+
+        document.getElementById('clearCanvas').addEventListener('click', function() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+        });
+    </script>
+</body>
+</html>

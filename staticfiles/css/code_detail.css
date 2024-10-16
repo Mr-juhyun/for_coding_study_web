@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.code-section {
+    width: 48%;
+}
+.draw-section {
+    width: 48%; 
+    display: none;
+}

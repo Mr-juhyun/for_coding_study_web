@@ -1,0 +1,5 @@
+#drawingCanvas {
+    border: 1px solid #fafafa;
+    background-color: hwb(0 100% 0%);
+    margin-top: 20px;
+}
