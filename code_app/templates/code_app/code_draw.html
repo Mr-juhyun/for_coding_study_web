@@ -9,11 +9,15 @@
     <link rel="stylesheet" href="{% static 'css/code_draw.css' %}">
 </head>
 <body>
-    <h1>코드 제출자 :  {{ code.name }}</h1>
-    <pre>{{ code.code }}</pre>
-    
-    <canvas id="drawingCanvas" width="800" height="400"></canvas>
-    
+    <div class = "container">
+        {% comment %} <div class = "code-section">
+            <h1>코드 제출자 :  {{ code.name }}</h1>
+            <pre>{{ code.code }}</pre>
+        </div> {% endcomment %}
+        <div class = "draw-section">
+            <canvas id="drawingCanvas" width="800" height="400"></canvas>
+        </div>
+    </div>
     <div id="controls">
         <button id="clearCanvas">지우기</button>
     </div>

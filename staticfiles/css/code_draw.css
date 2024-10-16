@@ -3,3 +3,22 @@
     background-color: hwb(0 100% 0%);
     margin-top: 20px;
 }
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+/* .code-section {
+    width: 48%;
+}
+.draw-section {
+    width: 48%; 
+    display: none;
+} */
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+

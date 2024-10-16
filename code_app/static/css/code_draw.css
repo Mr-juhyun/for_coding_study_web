@@ -3,3 +3,20 @@
     background-color: hwb(0 100% 0%);
     margin-top: 20px;
 }
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.code-section {
+    float: left;
+}
+.draw-section {
+    float: right;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+

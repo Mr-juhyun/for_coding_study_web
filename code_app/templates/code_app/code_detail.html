@@ -8,20 +8,18 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/code_detail.css' %}">
     <script>
-        function showDrawSection() {
-            document.querySelector('.draw-section').style.display = 'block';
-        }
+       
     </script>
 </head>
 <body>
     <div class="container">
         <div class="code-section">
-        <h1>{{ code.name }}</h1>
+        <h1>코드 제출자 : {{ code.name }}</h1>
         <pre>{{ code.code }}</pre>
         </div>
         <div class = "draw-section">
-            <a href="{% url 'code_draw' code.id %}" onclick="showDrawSection()">그림판 나와라!</a>
         </div>
+        <a href="{% url 'code_draw' code.id %}">그림판 나와라!</a>
     </div>
     
 </body>
