@@ -9,17 +9,16 @@
     <link rel="stylesheet" href="{% static 'css/code_draw.css' %}">
 </head>
 <body>
-    <div class = "container">
-        {% comment %} <div class = "code-section">
-            <h1>코드 제출자 :  {{ code.name }}</h1>
-            <pre>{{ code.code }}</pre>
-        </div> {% endcomment %}
         <div class = "draw-section">
-            <canvas id="drawingCanvas" width="800" height="400"></canvas>
+            <canvas id="drawingCanvas" width="1000" height="600"></canvas>
         </div>
     </div>
-    <div id="controls">
+    <div id="controls" style="display: flex; justify-content: space-between; align-items: center;">
         <button id="clearCanvas">지우기</button>
+        
+        <a href="{% url 'code_detail' code.id %}">
+            <button>뒤로가기</button>
+        </a>
     </div>
 
     <script>

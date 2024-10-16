@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 스터디</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <h1>코드 스터디</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'home' %}">
+                        <span class="icon">🏠</span>
+                    <span>홈</span>
+                </a>
+            </li>
+            <li>
+                    <a href="{% url 'code_list' %}">
+                        <span class="icon">🔍</span>
+                    <span>코드 목록</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'code_submit' %}">
+                        <span class="icon">✏️</span>
+                    <span>코드 제출</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </header>   
+</body>
+</html>

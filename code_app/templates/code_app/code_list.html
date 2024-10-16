@@ -10,12 +10,24 @@
 <body>
 
     <header>
-        <h1>코드 스터디</h1>
+        <h1>
+            코드 스터디
+        </h1>
         <nav>
             <ul>
                 {% comment %} <li><a href="{% url 'home' %}">홈</a></li> {% endcomment %}
-                <li><a href="{% url 'code_list' %}">코드 목록</a></li>
-                <li><a href="{% url 'code_submit' %}">코드 제출</a></li>
+                <li>
+                    <a href="{% url 'home' %}">
+                        <span class="icon">🏠</span>
+                    <span>홈</span>
+                </a>
+            </li>
+                <li>
+                    <a href="{% url 'code_submit' %}">
+                        <span class="icon">✏️</span>
+                    <span>코드 제출</span>
+                </a>
+            </li>
                 {% comment %} <li><a href="{% url 'login' %}">로그인</a></li> {% endcomment %}
             </ul>
         </nav>

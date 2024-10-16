@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Code
 from .form import CodeForm
 from django.urls import reverse
+def home(request):
+    return render(request, 'code_app/home.html')
 def code_list(request):
     codes = Code.objects.all()
     return render(request, 'code_app/code_list.html', {'codes': codes})
