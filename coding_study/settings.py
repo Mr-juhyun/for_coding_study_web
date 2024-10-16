@@ -31,7 +31,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
-CSRF_TRUSTED_ORIGINS = ['https://port-0-for-coding-study-web-m2b7neql087f8d81.sel4.cloudtype.app','for-coding-study-web:8000']
+CSRF_TRUSTED_ORIGINS = ['https://port-0-for-coding-study-web-m2b7neql087f8d81.sel4.cloudtype.app','http://for-coding-study-web:8000']
 
 
 # Application definition
