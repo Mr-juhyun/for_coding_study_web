@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,11 @@
     <ul>
         {% for code in codes %}
         <li>
-            <a href="{% url 'code_detail' code.id %}" >{{ code.name }}</a>
+            <a href="{% url 'code_detail' code.id %}">{{ code.name }}</a>
+            <form action="{% url 'code_delete' code.id %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit" onclick="return confirm('이 코드를 정말 삭제하시겠습니까?');">삭제</button>
+            </form>
         </li>
         {% endfor %}
     </ul>
